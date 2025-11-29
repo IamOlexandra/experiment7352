@@ -1,0 +1,71 @@
+.popup, .thanks {
+    display: none;
+}
+
+.header .container {
+    max-width: 1130px;
+    display: flex;
+    justify-content: space-between;
+}
+.header {
+    background-color: var(--background);
+    padding-top: 21px;
+    padding-bottom: 21px;
+    align-items: center;
+}
+.header-navigation {
+    display: flex;
+    align-items: center;
+}
+.header-logo {
+    width: 93px;
+    height: 38px;
+}
+.header-logo-link {
+    margin-right: 81px;
+}
+.header-list {
+    display: flex;
+}
+.header-sublist {
+    display: none;
+}
+#header-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+#header-button::after {
+    content: "";
+    display: block;
+    width: 9px;
+    height: 5px;
+    margin-left: 8px;
+    background-image: url(../images/header-arrow.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.header-link {
+    margin-right: 50px;
+}
+.header-wrap {
+    display: flex;
+    align-items: center;
+}
+.header-switch {
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: none;
+    background-image: url(../images/light-mode.svg);
+    cursor: pointer;
+    margin-right: 51px;
+}
+
+.fortitle-title {
+    font-size: 24px;
+    text-align: center;
+}

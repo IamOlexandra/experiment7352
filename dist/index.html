@@ -1,1 +1,146 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Page title</title><link rel="stylesheet" href="/parcel-project-template/index.569a4d11.css"><script type="module" src="/parcel-project-template/index.cdc84ddc.js"></script><script src="/parcel-project-template/index.6c2642bc.js" nomodule="" defer></script></head><body> <h2>Test</h2>  <article class="example" id="uk"> <h1>HTML-partials</h1>  <img src="/parcel-project-template/logo.268195b3.png" alt="" width="320"> <p> The <a href="https://github.com/posthtml/posthtml-include" target="_blank" rel="noopener noreferrer"> posthtml-include </a> plugin allows you to add code from other HTML files (fragments) to HTML page files. Fragments are stored in the <code>src/partials</code> folder. The addition occurs when compiling page files, such as <code>index.html</code>. </p> <p> This <code>example.html</code> file is an example of such a snippet, with the markup of a certain part of the main page. This is very convenient for team development on student projects, when several people write in one HTML file at once. </p> <p> The syntax for adding a fragment to the main file is: <code> &lt;include src="./partials/filename.html"&gt;&lt;/include&gt;</code> </p> <div class="background"></div> </article> </body></html>
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/index.34df27b5.css">
+        <link rel="stylesheet" href="/index.f2ef3d13.css">
+        <link rel="stylesheet" href="/index.efc649e4.css">
+        <title>Інтерактивні ігри і завдання</title>
+    </head>
+    <body>
+        <header class="header">
+    <div class="container">
+        <nav class="header-navigation">
+            <a href="#" class="header-logo-link"><img src="/header-logo.9a3fb67d.svg" alt="Coding Magic logo" class="header-logo"></a>
+            <ul class="header-list">
+                <li class="header-item" id="header-opening"><button type="button" id="header-button" class="header-link">Інтерактив</button>
+                    <ul class="header-sublist">
+                        <li class="header-subitem"><a href="#" class="header-sublink">Числовий</a></li>
+                        <li class="header-subitem"><a href="#" class="header-sublink">Ігровий</a></li>
+                        <li class="header-subitem"><a href="#" class="header-sublink">Ознайомчий</a></li>
+                    </ul>
+                </li>
+                <li class="header-item"><a href="#" class="header-link">Наша команда</a></li>
+                <li class="header-item"><a href="#" class="header-link">Контакти</a></li>
+            </ul>
+        </nav>
+        <div class="header-wrap">
+            <button type="button" class="header-switch"></button>
+            <p class="header-text">Вітаємо, User!</p>
+        </div>
+    </div>
+</header>
+        <main class="main container">
+          <section class="popup">
+    <div class="popup-popup">
+        <p class="popup-text">Привіт!<br>Ви потрапили на сайт інтерактивних ігор та завдань<br>Надіємось, що вам сподобається і ви отримаєте позитивні емоції!<br>Бажаємо Вам гарно провести час!</p>
+        <p class="popup-text">Введіть своє ім’я:</p>
+        <form class="popup-form">
+            <input type="text" placeholder="Ваше ім’я..." class="popup-input">
+            <button type="submit" class="popup-button">Зберегти</button>
+        </form>
+        <button type="button" class="popup-close"></button>
+    </div>
+</section>
+          <section class="fortitle">
+        <h1 class="fortitle-title">Популярні інетрактивні ігри</h1>
+</section>
+          <section class="year">
+    <h2 class="year-title section-title">Перевір в який рік ти народився</h2>
+    <div class="year-group input-group">
+        <input type="text" placeholder="Введіть рік народження" class="year-input">
+        <button type="button" class="year-button"></button>
+    </div>
+    <p class="year-text"></p>
+</section>
+          
+          <section class="ssp">
+    <h2 class="ssp-title section-title">Камінь - ножиці - папір</h2>
+    <button type="button" class="ssp-itembutton" id="stone"></button>
+    <button type="button" class="ssp-itembutton" id="scissors"></button>
+    <button type="button" class="ssp-itembutton" id="paper"></button>
+    <p class="ssp-text"></p>
+    <button type="button" class="ssp-button">Варіант комп’ютера</button>
+    <p class="ssp-result"></p>
+</section>
+          <section class="calculator">
+    <h2 class="calculator-title section-title">Калькулятор</h2>
+    <input class="calculator-input" id="calculator-number1" placeholder="Введіть число">
+    <ul class="calculator-list">
+        <li class="calculator-item"><button id="calculator-add">+</button></li>
+        <li class="calculator-item"><button id="calculator-multiply">*</button></li>        <li class="calculator-item"><button id="calculator-subtract">-</button></li>
+        <li class="calculator-item"><button id="calculator-divide">/</button></li>
+    </ul>
+    <input class="calculator-input" id="calculator-number2" placeholder="Введіть число">
+    <button id="calculator-equals">=</button>
+    <p class="calculator-text"></p>
+</section>
+          
+          
+          <section class="football">
+    <h2 class="football-title section-title">Футбол</h2>
+    <div class="football-field">
+        <div class="football-ball"></div>
+    </div>
+</section>
+          
+          <section class="team">
+    <h2 class="team-title  section-title">Наша команда</h2>
+    <ul class="team-list">
+        <!--Треба доробити-->
+    </ul>
+</section>
+          <section class="scientists">
+    <h2 class="scientists-title  section-title">Обери вченого/их</h2>
+    <ul class="scientists-list">
+        <!--Треба доробити-->
+    </ul>
+    <ul class="scientists-buttons">
+        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Які вчені народилися в 19 ст.</button></li>
+        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Відсортувати вчених за алфавітом</button></li>
+        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Відсортувати вчених за кількістю прожитих років</button></li>
+        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вченого, який народився найпізніше</button></li>
+        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти рік народження Albert Einshtein</button></li>
+        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вчених, прізвища яких починаються на на літеру “С” </button></li>
+        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Видалити всіх вчених, ім’я яких починається на “А”</button></li>
+        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вченого, який прожив найдовше і вченого, який прожив найменше</button></li>
+        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вчених, в яких співпадають перші літери імені і прізвища</button></li>
+    </ul>
+</section>
+          <section class="thanks">
+    <div class="thanks-popup">
+        <p class="thanks-text">Дякую за підписку!</p>
+        <button type="button" class="thanks-close"></button>
+    </div>
+</section>
+        </main>
+        <footer class="footer">
+    <ul class="footer-list">
+        <li class="footer-wrap"><a href="#" class="footer-logo-link"><img src="/footer-logo.a8632c35.svg" alt="Coding Magic logo" class="footer-logo"></a></li>
+        <li class="footer-wrap">
+            <ul class="footer-socials">
+                <li class="footer-social"><p class="footer-text">Тел: <a href="#" class="footer-link">+38 (123) 456 78 90</a></p></li>
+                <li class="footer-social"><p class="footer-text">E-Mail: <a href="#" class="footer-link">codingmagic@gmail.com</a></p></li>
+                <li class="footer-social"><p class="footer-text">Facebook: <a href="#" class="footer-link">CodingMagic</a></p></li>
+                <li class="footer-social"><p class="footer-text">Twitter: <a href="#" class="footer-link">CodingMagic</a></p></li>
+                <li class="footer-social"><p class="footer-text">Instagram: <a href="#" class="footer-link">CodingMagic</a></p></li>
+            </ul>
+        </li>
+        <li class="footer-wrap">
+            <form class="footer-form">
+                <input type="text" placeholder="Ваша ел. адреса..." class="footer-input">
+                <button type="submit" class="footer-button">Підписатись</button>
+            </form>
+            <p class="footer-minitext">*Підписавшись, Ви зможете ортимувати інформаццію про новинки на сайті</p>
+        </li>
+    </ul>
+</footer>
+
+        <script src="/index.71213768.js"></script>
+        <script src="/index.28e11fe7.js"></script>
+    </body>
+</html>

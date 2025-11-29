@@ -1,0 +1,75 @@
+:root {
+    --background: #fff;
+    --background2: #eee;
+    --main: #000;
+    --hover: #f1f1f1;
+    --input: #d7d7d7;
+    --shadow: #00000040;
+    --placeholder: #7e7e7e;
+    --win: #039900;
+    --loss: #990000;
+    --draw: #c3a900;
+    --football-field: #5abb58;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat Alternates";
+    font-weight: 400;
+    font-size: 12px;
+    list-style: none;
+    text-decoration: none;
+    color: var(--main);
+    box-sizing: border-box;
+}
+*:focus {
+    outline: none;
+}
+body {
+    background-color: var(--background2);
+    background-image: url(../images/background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    width: 100%;
+    max-width: 1090px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.main {
+    background-color: var(--background);
+}
+section {
+    padding-top: 36px;
+}
+section::after {
+    content: "";
+    display: block;
+    width: 536px;
+    height: 1px;
+    background-color: var(--main);
+    margin: 36px auto 0 auto;
+}
+.input-group {
+    display: flex;
+}
+.input-group input {
+    border: none;
+    border-radius: 20px 0 0 20px;
+    background-color: var(--input);
+    height: 35px;
+    padding: 10px;
+    box-shadow: 3px 3px 0px 0px var(--shadow);
+}
+.input-group button {
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background-color: var(--main);
+    background-image: url(../images/button-image.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    box-shadow: 3px 3px 0px 0px var(--shadow);
+}
