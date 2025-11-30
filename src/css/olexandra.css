@@ -1,4 +1,4 @@
-.popup, .thanks {
+.thanks {
     display: none;
 }
 
@@ -27,9 +27,6 @@
 .header-list {
     display: flex;
 }
-.header-sublist {
-    display: none;
-}
 #header-button {
     border: none;
     background-color: transparent;
@@ -47,8 +44,41 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+.header-item:first-child {
+    position: relative;
+}
+.header-sublist {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    width: 150px;
+    background-color: var(--background);
+    border: solid 1px var(--main);
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+}
+.header-subitem {
+    text-align: center;
+}
+.header-sublink {
+    display: block;
+    padding: 10px 0 10px 0;
+}
+.header-sublink:hover, .header-sublink:focus {
+    background-color: var(--hover);
+}
+.header-subitem:last-child .header-sublink {
+    border-radius: 0 0 20px 20px;
+}
 .header-link {
-    margin-right: 50px;
+    margin-right: 50px;    
+}
+.header-link:hover, .header-link:focus {
+    color: var(--main-hover);
+}
+#header-button:hover::after, #header-button:focus::after {
+    background-image: url(../images/header-arrow-hover.svg);
 }
 .header-wrap {
     display: flex;
@@ -68,4 +98,89 @@
 .fortitle-title {
     font-size: 24px;
     text-align: center;
+}
+
+.popup {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--shadow);
+    display: block;
+}
+.popup-popup {
+    left: calc(50% - (576px / 2));
+    top: calc(50% - (316px / 2));
+    position: fixed;
+    background-color: white;
+    width: 576px;
+    height: 316px;
+    padding: 46px 92px 47px 92px;
+    border-radius: 20px;
+    background-image: url(../images/sword.svg),  url(../images/puzzle.svg),  url(../images/game-development.svg),  url(../images/tic-tac-toe.svg);
+    background-repeat: no-repeat;
+    background-position-x: 41px,  85px,  505px,  461px;
+    background-position-y: 154px,  230px,  154px,  230px;
+}
+.popup::after {
+    display: none;
+}
+.popup-text {
+    text-align: center;
+}
+.popup-text:first-child {
+    margin-bottom: 42px;
+}
+.popup-text:nth-child(2) {
+    margin-bottom: 18px;
+}
+.popup-input {
+    display: block;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--input);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+}
+.popup-input:hover, .popup-input:focus {
+    background-color: var(--input-hover);
+}
+.popup-input::placeholder {
+    opacity: 1;
+    color: var(--placeholder);
+}
+.popup-button {
+    display: block;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--main);
+    box-shadow: 3px 3px 0px 0px var(--shadow);
+    padding: 10px;
+    color: var(--background);
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+.popup-button:hover, .popup-button:focus {
+    box-shadow: 2px 2px 0px 0px var(--shadow);
+    background-color: var(--main-hover);
+}
+.popup-close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: none;
+    background-image: url(../images/close-icon.svg);
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.popup-close:hover, .popup-close:focus {
+    background-image: url(../images/close-icon-hover.svg);
 }
