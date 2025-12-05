@@ -108,11 +108,12 @@
     height: 100%;
     background-color: var(--shadow);
     display: block;
+    z-index: 1;
 }
 .popup-popup {
+    position: fixed;
     left: calc(50% - (576px / 2));
     top: calc(50% - (316px / 2));
-    position: fixed;
     background-color: white;
     width: 576px;
     height: 316px;
@@ -122,6 +123,7 @@
     background-repeat: no-repeat;
     background-position-x: 41px,  85px,  505px,  461px;
     background-position-y: 154px,  230px,  154px,  230px;
+    z-index: 2;
 }
 .popup::after {
     display: none;
@@ -183,4 +185,73 @@
 }
 .popup-close:hover, .popup-close:focus {
     background-image: url(../images/close-icon-hover.svg);
+}
+
+.year-input {
+    width: 180px;
+}
+.year-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 576px;
+    align-items: center;
+}
+.year-text {
+    text-align: right;
+}
+
+.rps {
+    position: relative;
+}
+.rps-list {
+    position: relative;
+    width: 256px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 36px auto;
+}
+.rps-itembutton {
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: var(--main);
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.rps-item:first-child .rps-itembutton {
+    background-image: url(../images/rock.svg);
+}
+.rps-item:nth-child(2) .rps-itembutton {
+    background-image: url(../images/scissors.svg);
+}
+.rps-item:nth-child(3) .rps-itembutton {
+    background-image: url(../images/paper.svg);
+}
+.rps-text {
+    height: 15px;
+    text-align: center;
+    margin-bottom: 36px;
+}
+.rps-button {
+    display: block;
+    border: none;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: var(--main);
+    border-radius: 20px;
+    color: var(--background);
+    cursor: pointer;
+}
+.rps-button:hover, .rps-button:focus, .rps-itembutton:hover, .rps-itembutton:focus {
+    background-color: var(--main-hover);
+}
+.rps-score {
+    position: absolute;
+    width: fit-content;
+    right: 20%;
+    top: 92px;
+    line-height: 170%;
 }
