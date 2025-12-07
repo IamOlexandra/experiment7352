@@ -321,3 +321,22 @@
     color: var(--placeholder);
     text-align: center;
 }
+
+.football-field {
+    position: relative;
+    width: 720px;
+    height: 220px;
+    background-color: var(--football-field);
+    border: solid var(--main) 2px;
+    border-radius: 37px;
+    margin: 0 auto;
+}
+.football-ball {
+    position: absolute;
+    left: 92px;
+    top: 85px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/football-ball.svg);
+    background-position: center;
+}

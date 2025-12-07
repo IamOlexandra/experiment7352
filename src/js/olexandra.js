@@ -85,7 +85,57 @@ calculatorButtons.forEach((button, index) => button.addEventListener("click", ()
     pressedCalculatorButton = index;
     calculatorButtons[pressedCalculatorButton].classList.add("calculator-button-pressed");
 }));
-document.querySelectorAll(".calculator-equals").addEventListener("click", () => {
+document.getElementById("calculator-equals").addEventListener("click", () => {
     const number1 = Number(document.getElementById("calculator-number1").value.trim()),
         number2 = Number(document.getElementById("calculator-number2").value.trim());
+    if(!isNaN(number1) && !isNaN(number2) && pressedCalculatorButton !== null) {
+        if(pressedCalculatorButton === 0) {
+            calculatorResult.textContent = number1 + number2;
+        } else if(pressedCalculatorButton === 1) {
+            calculatorResult.textContent = number1 * number2;
+        } else if(pressedCalculatorButton === 2) {
+            calculatorResult.textContent = number1 - number2;
+        } else if(pressedCalculatorButton === 3) {
+            if(number2 !== 0) {
+                calculatorResult.textContent = number1 / number2;
+            } else {
+                calculatorResult.textContent = "Помилка!"
+            }
+        } else {
+            calculatorResult.textContent = "Помилка!";
+        }
+    } else {
+        calculatorResult.textContent = "Помилка!";
+    }
+    console.log(calculatorResult.textContent);
+    if(calculatorResult.textContent.length > 15) {
+        calculatorResult.textContent = "Число задовге";
+    }
+});
+
+const footballBall = document.querySelector(".football-ball"),
+    footballField = document.querySelector(".football-field");
+footballField.addEventListener("click", event => {
+    let x = event.clientX - footballField.getBoundingClientRect().x - 25,
+        y = event.clientY - footballField.getBoundingClientRect().y - 25;
+    if(x + 50 > footballField.getBoundingClientRect().width) {
+        x = footballField.getBoundingClientRect().width - 52;
+    }
+    if(x < 0) {
+        x = 0;
+    }
+    if(y + 50 > footballField.getBoundingClientRect().height) {
+        y = footballField.getBoundingClientRect().height - 52;
+    }
+    if(y < 0) {
+        y = 0;
+    }
+    if(x <= 5 && (y <= 5 || y >= footballField.getBoundingClientRect().height - 57)) {
+        x += 6;
+    }
+    if(x >= footballField.getBoundingClientRect().width - 57 && (y <= 5 || y >= footballField.getBoundingClientRect().height - 57)) {
+        x -= 6;
+    }
+    footballBall.style.left = x + "px";
+    footballBall.style.top = y + "px";
 });
