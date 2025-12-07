@@ -340,3 +340,25 @@
     background-image: url(../images/football-ball.svg);
     background-position: center;
 }
+
+.scientists-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 36px;
+    column-gap: 59px;
+    width: 577px;
+    margin: 0 auto;
+    margin-bottom: 36px;
+}
+.scientists-item {
+    width: 100px;
+    height: 100px;
+    background-color: var(--scientist);
+    border-radius: 20px;
+    padding-top: 41px;
+    text-align: center;
+}
+.scientists-name, .scientists-years {
+    font-size: 8px;
+}

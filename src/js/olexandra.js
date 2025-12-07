@@ -139,3 +139,28 @@ footballField.addEventListener("click", event => {
     footballBall.style.left = x + "px";
     footballBall.style.top = y + "px";
 });
+
+const allScientists = [
+    {firstName: "Albert", lastName: "Einstein", birth: 1879, death: 1955},
+    {firstName: "Isaac", lastName: "Newton", birth: 1643, death: 1727},
+    {firstName: "Marie", lastName: "Curie", birth: 1867, death: 1934},
+    {firstName: "Charles", lastName: "Darwin", birth: 1809, death: 1882},
+    {firstName: "Nikola", lastName: "Tesla", birth: 1856, death: 1943},
+    {firstName: "Galileo", lastName: "Galilei", birth: 1564, death: 1642},
+    {firstName: "Ada", lastName: "Lovelace", birth: 1815, death: 1852},
+    {firstName: "Stephen", lastName: "Hawking", birth: 1942, death: 2018},
+    {firstName: "Dmitri", lastName: "Mendeleev", birth: 1834, death: 1907},
+    {firstName: "Johannes", lastName: "Kepler", birth: 1571, death: 1630},
+    {firstName: "Rosalind", lastName: "Franklin", birth: 1920, death: 1958},
+    {firstName: "Michael", lastName: "Faraday", birth: 1791, death: 1867},
+],
+    scientistsList = document.querySelector(".scientists-list"),
+    scientistsButtons = document.querySelectorAll(".scientists-button");
+function buildScientists(scientists) {
+    let html = "";
+    scientists.forEach(scientist => {
+        html += `<li class="scientists-item"><h3 class="scientists-name">${scientist.firstName} ${scientist.lastName}</h3><p class="scientists-years">${scientist.birth}-${scientist.death}</p></li>`;
+    });
+    scientistsList.innerHTML = html;
+}
+buildScientists(allScientists);
