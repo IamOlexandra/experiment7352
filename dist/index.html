@@ -59,7 +59,22 @@
         <p class="year-text"></p>
     </div>
 </section>
-          
+          <div class="guess-container">
+    <h2>Вгадай число 1–9</h2>
+
+    <div class="guess-row">
+        <div class="guess-box">
+            <input type="number" id="guessInput" class="guess-input" placeholder="Введіть число">
+            <button class="guess-btn" id="guessBtn" type="button"></button>
+        </div>
+
+    
+        <button id="guessResetBtn" class="guess-reset-btn" type="button">Скинути</button>
+    </div>
+
+    <div id="guessMessage" aria-live="polite"></div>
+</div>
+
           <section class="rps">
     <h2 class="rps-title section-title">Камінь - ножиці - папір</h2>
     <ul class="rps-list">
@@ -86,8 +101,27 @@
         <p class="calculator-text">Результат</p>
     </div>
 </section>
+          <div class="time-container">
+    <h2>Калькулятор часу</h2>
+
+    <div class="time-box">
+        <input type="number" id="timeInput" class="time-input" placeholder="Введіть хвилини">
+        <button class="time-btn" id="timeBtn" type="button"></button>
+    </div>
+
+    <div id="timeMessage" aria-live="polite"></div>
+</div>
+
           
-          
+<h2 style="margin-top: 60px">Google динозавр</h2>
+
+<div id="dinoGame">
+    <div id="dino"></div>
+    <div id="cactus"></div>
+</div>
+
+<div id="dinoMessage"></div>
+
           <section class="football">
     <h2 class="football-title section-title">Футбол</h2>
     <div class="football-field">
@@ -106,17 +140,29 @@
     <ul class="scientists-list">
         <!--Будується при завантаженні сторінки-->
     </ul>
-    <ul class="scientists-buttons">
-        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Які вчені народилися в 19 ст.</button></li>
-        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Відсортувати вчених за алфавітом</button></li>
-        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Відсортувати вчених за кількістю прожитих років</button></li>
-        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вченого, який народився найпізніше</button></li>
-        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти рік народження Albert Einshtein</button></li>
-        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вчених, прізвища яких починаються на на літеру “С” </button></li>
-        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Видалити всіх вчених, ім’я яких починається на “А”</button></li>
-        <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вченого, який прожив найдовше і вченого, який прожив найменше</button></li>
+    <div class="scientists-wrap">
+        <ul class="scientists-buttons">
+            <li class="scientists-buttons-item"><button type="button" class="scientists-button">Які вчені народилися в 19 ст.</button></li>
+            <li class="scientists-buttons-item"><button type="button" class="scientists-button">Відсортувати вчених за алфавітом</button></li>
+            <li class="scientists-buttons-item"><button type="button" class="scientists-button">Відсортувати вчених за кількістю прожитих років</button></li>
+            <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вченого, який народився найпізніше</button></li>
+        </ul>
+        <ul class="scientists-buttons">
+            <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти рік народження Albert Einshtein</button></li>
+            <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вчених, прізвища яких починаються на на літеру “С” </button></li>
+            <li class="scientists-buttons-item"><button type="button" class="scientists-button">Видалити всіх вчених, ім’я яких починається на “А”</button></li>
+            <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вченого, який прожив найдовше і вченого, який прожив найменше</button></li>
+        </ul>
+    </div>
+    <ul class="scientists-buttons scientists-last">
         <li class="scientists-buttons-item"><button type="button" class="scientists-button">Знайти вчених, в яких співпадають перші літери імені і прізвища</button></li>
     </ul>
+    <div class="scientists-popup">
+        <div class="scientists-popup-block">
+            <p class="scientists-popup-text"></p>
+            <button type="submit" class="scientists-popup-close"></button>
+        </div>
+    </div>
 </section>
           <section class="thanks">
     <div class="thanks-popup">

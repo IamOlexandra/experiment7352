@@ -100,7 +100,7 @@
     text-align: center;
 }
 
-.popup {
+.popup, .scientists-popup {
     top: 0;
     left: 0;
     position: fixed;
@@ -114,10 +114,10 @@
     position: fixed;
     left: calc(50% - (576px / 2));
     top: calc(50% - (316px / 2));
-    background-color: white;
+    background-color: var(--background);
     width: 576px;
     height: 316px;
-    padding: 46px 92px 47px 92px;
+    padding: 46px 92px 47px;
     border-radius: 20px;
     background-image: url(../images/sword.svg),  url(../images/puzzle.svg),  url(../images/game-development.svg),  url(../images/tic-tac-toe.svg);
     background-repeat: no-repeat;
@@ -170,7 +170,7 @@
     box-shadow: 2px 2px 0px 0px var(--shadow);
     background-color: var(--main-hover);
 }
-.popup-close {
+.popup-close, .scientists-popup-close {
     position: absolute;
     right: 30px;
     top: 30px;
@@ -183,7 +183,7 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-.popup-close:hover, .popup-close:focus {
+.popup-close:hover, .popup-close:focus, .scientists-popup-close:hover, .scientists-popup-close:focus {
     background-image: url(../images/close-icon-hover.svg);
 }
 
@@ -341,6 +341,12 @@
     background-position: center;
 }
 
+.scientists {
+    padding-bottom: 36px;
+}
+.scientists::after {
+    display: none;
+}
 .scientists-list {
     display: flex;
     flex-wrap: wrap;
@@ -361,4 +367,72 @@
 }
 .scientists-name, .scientists-years {
     font-size: 8px;
+}
+.scientists-wrap {
+    display: flex;
+    margin-bottom: 20px;
+}
+.scientists-buttons {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 20px;
+    height: 270px;
+    margin: 0 auto;
+    height: fit-content;
+}
+.scientists-wrap .scientists-buttons:first-child {
+    align-items: flex-end;
+    width: 450px;
+    margin-right: 18px;
+}
+.scientists-wrap .scientists-buttons:nth-child(2) {
+    align-items: flex-start;
+    width: 450px;
+    margin-left: 18px;
+}
+.scientists-last {
+    align-items: center;
+}
+.scientists-button {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--main);
+    box-shadow: 3px 3px 0px 0px var(--shadow);
+    padding: 10px 20px;
+    color: var(--background);
+    cursor: pointer;
+    text-align: left;
+}
+.scientists-button:last-child {
+    align-self: center;
+}
+.scientists-button:hover, .scientists-button:focus {
+    box-shadow: 2px 2px 0px 0px var(--shadow);
+    background-color: var(--main-hover);
+}
+.scientists-popup {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--shadow);
+    display: none;
+    z-index: 1;
+}
+.scientists-popup-block {
+    position: fixed;
+    left: calc(50% - (300px / 2));
+    top: calc(50% - (100px / 2));
+    background-color: var(--background);
+    width: 210px;
+    height: 100px;
+    padding: 27px 52px 26px;
+    border-radius: 20px;
+    z-index: 2;
+}
+.scientists-popup-text {
+    text-align: center;
 }

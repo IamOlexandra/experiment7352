@@ -33,6 +33,7 @@ body {
     background-image: url(../images/background.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 0 !important;
 }
 .container {
     width: 100%;

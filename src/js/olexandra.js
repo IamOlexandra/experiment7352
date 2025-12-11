@@ -107,7 +107,6 @@ document.getElementById("calculator-equals").addEventListener("click", () => {
     } else {
         calculatorResult.textContent = "Помилка!";
     }
-    console.log(calculatorResult.textContent);
     if(calculatorResult.textContent.length > 15) {
         calculatorResult.textContent = "Число задовге";
     }
@@ -156,6 +155,7 @@ const allScientists = [
 ],
     scientistsList = document.querySelector(".scientists-list"),
     scientistsButtons = document.querySelectorAll(".scientists-button");
+let someScientists = allScientists;
 function buildScientists(scientists) {
     let html = "";
     scientists.forEach(scientist => {
@@ -163,4 +163,65 @@ function buildScientists(scientists) {
     });
     scientistsList.innerHTML = html;
 }
-buildScientists(allScientists);
+buildScientists(someScientists);
+scientistsButtons[0].addEventListener("click", () => {
+    someScientists = someScientists.filter(scientist => scientist.birth > 1800 && scientist.birth <= 1900);
+    buildScientists(someScientists);
+});
+scientistsButtons[1].addEventListener("click", () => {
+    //Finish later
+    buildScientists(someScientists);
+});
+scientistsButtons[2].addEventListener("click", () => {
+    someScientists = someScientists.sort((a, b) => (b.death - b.birth) - (a.death - a.birth));
+    buildScientists(someScientists);
+});
+scientistsButtons[3].addEventListener("click", () => {
+    let latestBornScientist = {firstName: null, lastName: null, birth: 0, death: null};
+    for(let scientist of someScientists) {
+        if(scientist.birth > latestBornScientist.birth) {
+            latestBornScientist = scientist;
+        }
+    }
+    someScientists = [];
+    someScientists.push(latestBornScientist);
+    buildScientists(someScientists);
+});
+scientistsButtons[4].addEventListener("click", () => {
+    const albert = allScientists.find(scientist => scientist.firstName === "Albert" && scientist.lastName === "Einstein");
+    document.querySelector(".scientists-popup-text").textContent = `Рік народження ${albert.firstName} ${albert.lastName} - ${albert.birth}.`;
+    document.querySelector(".scientists-popup").style.display = "block";
+});
+scientistsButtons[5].addEventListener("click", () => {
+    someScientists = someScientists.filter(scientist => scientist.lastName[0] === "C");
+    buildScientists(someScientists);
+});
+scientistsButtons[6].addEventListener("click", () => {
+    someScientists = someScientists.filter(scientist => scientist.firstName[0] !== "A");
+    buildScientists(someScientists);
+});
+scientistsButtons[7].addEventListener("click", () => {
+    let mostLivedScientist = {firstName: null, lastName: null, birth: 0, death: 0};
+    for(let scientist of someScientists) {
+        if(scientist.death - scientist.birth > mostLivedScientist.death - mostLivedScientist.birth) {
+            mostLivedScientist = scientist;
+        }
+    }
+    let leastLeavedScientist = {firstName: null, lastName: null, birth: 0, death: 1000};
+    for(let scientist of someScientists) {
+        if(scientist.death - scientist.birth < leastLeavedScientist.death - leastLeavedScientist.birth) {
+            leastLeavedScientist = scientist;
+        }
+    }
+    someScientists = [];
+    someScientists.push(mostLivedScientist);
+    someScientists.push(leastLeavedScientist);
+    buildScientists(someScientists);
+});
+scientistsButtons[8].addEventListener("click", () => {
+    someScientists = someScientists.filter(scientist => scientist.firstName[0] === scientist.lastName[0]);
+    buildScientists(someScientists);
+});
+document.querySelector(".scientists-popup-close").addEventListener("click", () => {
+    document.querySelector(".scientists-popup").style.display = "none";
+});
