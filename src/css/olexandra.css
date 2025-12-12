@@ -338,6 +338,32 @@
     background-position: center;
 }
 
+.threenumbers-list {
+    display: flex;
+    width: 481px;
+    justify-content: space-between;
+    margin: 0 auto 36px auto;
+}
+.threenumbers-input {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--input);
+    padding: 10px;
+    width: 135px;
+    box-shadow: 3px 3px 0px 0px var(--shadow);
+    text-align: center;
+}
+.threenumbers-input:hover, .threenumbers-input:focus {
+    background-color: var(--input-hover);
+    box-shadow: 2px 2px 0px 0px var(--shadow);
+}
+.threenumbers-input::placeholder {
+    color: var(--placeholder);
+}
+.threenumbers-text {
+    height: 15px;
+}
+
 .scientists {
     position: relative;
     padding-bottom: 36px;

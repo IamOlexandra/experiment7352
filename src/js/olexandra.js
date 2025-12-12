@@ -139,6 +139,27 @@ footballField.addEventListener("click", event => {
     footballBall.style.top = y + "px";
 });
 
+const threeNumbersInputs = document.querySelectorAll(".threenumbers-input"),
+    threeNumbersResult = document.querySelector(".threenumbers-text");
+threeNumbersInputs.forEach(input => input.addEventListener("change", () => {
+    let biggestNumber = null,
+        isWrong = false;
+    for(let anInput of threeNumbersInputs) {
+        const inputValue = Number(anInput.value.trim());
+        if(!isNaN(inputValue)) {
+            if(biggestNumber !== null) {
+                inputValue > biggestNumber ? biggestNumber = inputValue : biggestNumber;
+            } else {
+                biggestNumber = inputValue;
+            }
+        } else {
+            isWrong = true;
+        }
+    }
+    threeNumbersResult.textContent = !isWrong ? `Найбільше число, яке ви ввели - ${biggestNumber}` : "Одне число, яке ви ввели - неправильне";
+    threeNumbersResult.style.color = !isWrong ? "var(--main)" : "var(--loss)";
+}));
+
 const allScientists = [
     {firstName: "Albert", lastName: "Einstein", birth: 1879, death: 1955},
     {firstName: "Isaac", lastName: "Newton", birth: 1643, death: 1727},
@@ -243,7 +264,6 @@ scientistReset.addEventListener("click", () => {
 document.querySelector(".scientists-popup-close").addEventListener("click", () => {
     document.querySelector(".scientists-popup").style.display = "none";
 });
-
 
 const thanks = document.querySelector(".thanks");
 document.querySelector(".footer-form").addEventListener("submit", event => {
