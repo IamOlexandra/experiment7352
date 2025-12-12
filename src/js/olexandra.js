@@ -154,7 +154,8 @@ const allScientists = [
     {firstName: "Michael", lastName: "Faraday", birth: 1791, death: 1867},
 ],
     scientistsList = document.querySelector(".scientists-list"),
-    scientistsButtons = document.querySelectorAll(".scientists-button");
+    scientistsButtons = document.querySelectorAll(".scientists-button"),
+    scientistReset = document.querySelector(".scientists-reset");
 let someScientists = allScientists;
 function buildScientists(scientists) {
     let html = "";
@@ -163,18 +164,24 @@ function buildScientists(scientists) {
     });
     scientistsList.innerHTML = html;
 }
+function makeResetVisible() {
+    scientistReset.style.display = "block";
+}
 buildScientists(someScientists);
 scientistsButtons[0].addEventListener("click", () => {
     someScientists = someScientists.filter(scientist => scientist.birth > 1800 && scientist.birth <= 1900);
     buildScientists(someScientists);
+    makeResetVisible();
 });
 scientistsButtons[1].addEventListener("click", () => {
-    //Finish later
+    someScientists.sort((a, b) => `${a.firstName} ${a.lastName}`.localeCompare(`${b.firstName} ${b.lastName}`));
     buildScientists(someScientists);
+    makeResetVisible();
 });
 scientistsButtons[2].addEventListener("click", () => {
     someScientists = someScientists.sort((a, b) => (b.death - b.birth) - (a.death - a.birth));
     buildScientists(someScientists);
+    makeResetVisible();
 });
 scientistsButtons[3].addEventListener("click", () => {
     let latestBornScientist = {firstName: null, lastName: null, birth: 0, death: null};
@@ -186,6 +193,7 @@ scientistsButtons[3].addEventListener("click", () => {
     someScientists = [];
     someScientists.push(latestBornScientist);
     buildScientists(someScientists);
+    makeResetVisible();
 });
 scientistsButtons[4].addEventListener("click", () => {
     const albert = allScientists.find(scientist => scientist.firstName === "Albert" && scientist.lastName === "Einstein");
@@ -195,10 +203,12 @@ scientistsButtons[4].addEventListener("click", () => {
 scientistsButtons[5].addEventListener("click", () => {
     someScientists = someScientists.filter(scientist => scientist.lastName[0] === "C");
     buildScientists(someScientists);
+    makeResetVisible();
 });
 scientistsButtons[6].addEventListener("click", () => {
     someScientists = someScientists.filter(scientist => scientist.firstName[0] !== "A");
     buildScientists(someScientists);
+    makeResetVisible();
 });
 scientistsButtons[7].addEventListener("click", () => {
     let mostLivedScientist = {firstName: null, lastName: null, birth: 0, death: 0};
@@ -217,11 +227,30 @@ scientistsButtons[7].addEventListener("click", () => {
     someScientists.push(mostLivedScientist);
     someScientists.push(leastLeavedScientist);
     buildScientists(someScientists);
+    makeResetVisible();
 });
 scientistsButtons[8].addEventListener("click", () => {
     someScientists = someScientists.filter(scientist => scientist.firstName[0] === scientist.lastName[0]);
     buildScientists(someScientists);
+    makeResetVisible();
+
+});
+scientistReset.addEventListener("click", () => {
+    someScientists = allScientists;
+    buildScientists(someScientists);
+    scientistReset.style.display = "none";
 });
 document.querySelector(".scientists-popup-close").addEventListener("click", () => {
     document.querySelector(".scientists-popup").style.display = "none";
+});
+
+
+const thanks = document.querySelector(".thanks");
+document.querySelector(".footer-form").addEventListener("submit", event => {
+    event.preventDefault();
+    thanks.style.display = "block";
+    document.querySelector(".footer-input").value = "";
+});
+document.querySelector(".thanks-close").addEventListener("click", () => {
+    thanks.style.display = "none";
 });

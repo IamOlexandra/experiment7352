@@ -26,7 +26,7 @@
 94C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\utils\src\getCertificate.js134089101734535062 0
 107C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\source-map-support\browser-source-map-support.js134089101707364088 0
 79C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\msgpackr-extract\src134089101707641032 1
-50C:\Users\Alex\Documents\GitHub\experiment7352\dist134099272282390329 1
+50C:\Users\Alex\Documents\GitHub\experiment7352\dist134099546593160343 1
 90C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\workers\src\Profiler.js134089101739494604 0
 70C:\Users\Alex\Documents\GitHub\experiment7352\src\partials\header.html134089106446843092 0
 90C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\caniuse-lite\data\regions\SZ.js134089101764226349 0
@@ -95,7 +95,7 @@
 77C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\fastq\package.json134089101721176800 0
 91C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\term-size\vendor\macos\term-size134089101715728020 0
 91C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\events\src\Disposable.js134089101712635041 0
-62C:\Users\Alex\Documents\GitHub\experiment7352\src\css\main.css134096032477955299 0
+62C:\Users\Alex\Documents\GitHub\experiment7352\src\css\main.css134099289092538921 0
 98C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\caniuse-lite\data\features\css-fixed.js134089101753445214 0
 105C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\node-gyp-build-optional-packages\build-test.js134089101711036927 0
 72C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\mdn-data\l10n134089101724087063 1
@@ -187,7 +187,7 @@
 85C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\utils\package.json134089101750709708 0
 90C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\caniuse-lite\data\regions\IL.js134089101758520738 0
 72C:\Users\Alex\Documents\GitHub\experiment7352\src\partials\football.html134089116028287793 0
-70C:\Users\Alex\Documents\GitHub\experiment7352\src\partials\footer.html134089117981938350 0
+70C:\Users\Alex\Documents\GitHub\experiment7352\src\partials\footer.html134099511262570589 0
 71C:\Users\Alex\Documents\GitHub\experiment7352\src\images\light-mode.svg134086432093030630 0
 93C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\css-tree\lib\common\SyntaxError.js134089101752285953 0
 146C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\side-effects-package-redirect-down134089101751961694 1
@@ -198,7 +198,7 @@
 108C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest4.c134089101750407728 0
 99C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\caniuse-lite\data\features\es6-module.js134089101756327465 0
 107C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@swc\helpers\src\_initializer_define_property.js134089101752575711 0
-74C:\Users\Alex\Documents\GitHub\experiment7352\src\partials\scientists.html134099255869885546 0
+74C:\Users\Alex\Documents\GitHub\experiment7352\src\partials\scientists.html134099283246430032 0
 75C:\Users\Alex\Documents\GitHub\experiment7352\src\partials\guessnumber.html134096053665296358 0
 105C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@jridgewell\source-map\dist\source-map.mjs.map134089101719342472 0
 90C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\posthtml-render\dist\index.d.ts134089101720184411 0
@@ -244,7 +244,7 @@
 103C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\dom-serializer\lib\esm\foreignNames.d.ts.map134089101724558752 0
 158C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\side-effects-package-redirect-down\foo\bar\baz134089101751795734 1
 92C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\postcss-value-parser\lib\parse.js134089101711632209 0
-65C:\Users\Alex\Documents\GitHub\experiment7352\src\js\olexandra.js134099250834726875 0
+65C:\Users\Alex\Documents\GitHub\experiment7352\src\js\olexandra.js134099286448040203 0
 110C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\caniuse-lite\data\features\font-family-system-ui.js134089101756859003 0
 92C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@swc\helpers\scripts\generator.sh134089101751137449 0
 67C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\css-what134089101734606014 1
@@ -291,7 +291,7 @@
 93C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\terser\lib\compress\reduce-vars.js134089101746523430 0
 74C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\nan\doc\json.md134089101741532907 0
 84C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\type-fest\ts41\index.d.ts134089101733587281 0
-67C:\Users\Alex\Documents\GitHub\experiment7352\src\css\olexandra.css134099272281398001 0
+67C:\Users\Alex\Documents\GitHub\experiment7352\src\css\olexandra.css134099546592191700 0
 99C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\node-resolver-core\lib\_empty.js134089101709337997 0
 76C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\nan\nan_private.h134089101732896159 0
 100C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\css-tree\lib\syntax\node\AtrulePrelude.js134089101720430163 0
@@ -1052,7 +1052,7 @@
 84C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\weak-lru-cache\index.d.ts134089101725102091 0
 85C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\node-addon-api\except.gypi134089101713034484 0
 81C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\source-map\lib\util.js134089101730724537 0
-68C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.71213768.js134099250835538897 0
+68C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.71213768.js134099286448937950 0
 77C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\has-flag\readme.md134089101716636965 0
 88C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\cosmiconfig\dist\loaders.d.ts134089101743105417 0
 69C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\terser\lib134089101748022576 1
@@ -1297,7 +1297,7 @@
 73C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\terser\LICENSE134089101707597146 0
 88C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\source-map\lib\source-node.js134089101729368902 0
 89C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\watcher\src\DirTree.cc134089101721009492 0
-73C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.f2ef3d13.css.map134099272282335484 0
+73C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.f2ef3d13.css.map134099546593108749 0
 79C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\fclone\src\fclone.js134089101727022467 0
 73C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\terser\main.js134089101743717513 0
 102C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\core\lib\TargetDescriptor.schema.js134089101752990374 0
@@ -3698,7 +3698,7 @@
 94C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\caniuse-lite\data\features\webgl.js134089101765976012 0
 105C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\caniuse-lite\data\features\webkit-user-drag.js134089101766040415 0
 110C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@swc\helpers\lib\_class_extract_field_descriptor.js134089101734862521 0
-73C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.34df27b5.css.map134099085769886160 0
+73C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.34df27b5.css.map134099289093367155 0
 93C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\caniuse-lite\data\features\webm.js134089101766060426 0
 95C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\caniuse-lite\data\features\webnfc.js134089101766075486 0
 95C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\caniuse-lite\data\features\webusb.js134089101766124548 0
@@ -4554,7 +4554,7 @@
 96C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\cache\src\IDBCache.browser.js134089101718719077 0
 88C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\cache\src\IDBCache.js134089101722555599 0
 85C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\cache\src\index.js134089101725225489 0
-61C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.html134099255870945203 0
+61C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.html134099511263778894 0
 89C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\cache\src\LMDBCache.js134089101727240851 0
 75C:\Users\Alex\Documents\GitHub\experiment7352\dist\footer-logo.a8632c35.svg134099085770812384 0
 96C:\Users\Alex\Documents\GitHub\experiment7352\node_modules\@parcel\cache\lib\IDBCache.browser.js134089101715396471 0
@@ -4739,11 +4739,11 @@
 76C:\Users\Alex\Documents\GitHub\experiment7352\dist\header-arrow.78c84505.svg134099085770537805 0
 75C:\Users\Alex\Documents\GitHub\experiment7352\dist\header-logo.9a3fb67d.svg134099085770759170 0
 68C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.28e11fe7.js134099085770004076 0
-69C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.34df27b5.css134099085769886160 0
-72C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.71213768.js.map134099250835538897 0
+69C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.34df27b5.css134099289093339391 0
+72C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.71213768.js.map134099286448937950 0
 69C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.efc649e4.css134099085770160329 0
 73C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.efc649e4.css.map134099085770171241 0
-69C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.f2ef3d13.css134099272282335484 0
+69C:\Users\Alex\Documents\GitHub\experiment7352\dist\index.f2ef3d13.css134099546593098705 0
 74C:\Users\Alex\Documents\GitHub\experiment7352\dist\light-mode.056b6192.svg134099085770771184 0
 69C:\Users\Alex\Documents\GitHub\experiment7352\dist\paper.1a02f93b.svg134099085770812384 0
 70C:\Users\Alex\Documents\GitHub\experiment7352\dist\puzzle.117a9e25.svg134099085770548350 0
