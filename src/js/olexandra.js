@@ -177,7 +177,7 @@ const allScientists = [
     scientistsList = document.querySelector(".scientists-list"),
     scientistsButtons = document.querySelectorAll(".scientists-button"),
     scientistReset = document.querySelector(".scientists-reset");
-let someScientists = allScientists;
+let someScientists = structuredClone(allScientists);
 function buildScientists(scientists) {
     let html = "";
     scientists.forEach(scientist => {
@@ -257,7 +257,7 @@ scientistsButtons[8].addEventListener("click", () => {
 
 });
 scientistReset.addEventListener("click", () => {
-    someScientists = allScientists;
+    someScientists = structuredClone(allScientists);
     buildScientists(someScientists);
     scientistReset.style.display = "none";
 });
