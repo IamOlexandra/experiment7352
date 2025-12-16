@@ -265,6 +265,73 @@ document.querySelector(".scientists-popup-close").addEventListener("click", () =
     document.querySelector(".scientists-popup").style.display = "none";
 });
 
+const cardsImages = {sword: "https://i.ibb.co/B5h1p0GP/sword.png", puzzle: "https://i.ibb.co/rKQdDQHd/puzzle.png", gameDevelopment: "https://i.ibb.co/5gxX0GbS/game-development.png", ticTacToe: "https://i.ibb.co/HTm94qz2/tic-tac-toe.png",},
+    cardsCards = document.querySelectorAll(".cards-card"),
+    cardsNames = ["sword", "puzzle", "gameDevelopment", "ticTacToe", "sword", "puzzle", "gameDevelopment", "ticTacToe",],
+    cardsValues = [],
+    cardsWrap = document.querySelector(".cards-wrap");
+let cardsMoves = 0;
+function cardsGenerate() {
+    const localNames = structuredClone(cardsNames);
+    for(let index = 0; index < cardsNames.length; index++) {
+        const randomNumber = Math.floor(Math.random() * localNames.length);
+        cardsValues.push({i: index, item: localNames[randomNumber], isOpened: false});
+        localNames.splice(randomNumber, 1);
+    }
+}
+function findAndChangeOGElement(card, truth) {
+    cardsValues.forEach(element => {
+        if(element == card) {
+            element.isOpened = truth;
+        }
+    });
+}
+cardsGenerate();
+cardsCards.forEach((card, index) => {card.addEventListener("click", () => {
+    card.style.backgroundColor = "var(--scientist)";
+    let theCard = cardsValues.find(element => element.i === index);
+    card.style.backgroundImage = `url(${cardsImages[theCard.item]})`;
+    findAndChangeOGElement(theCard, true);
+    const allOpened = cardsValues.filter(element => element.isOpened === true);
+    if(allOpened.length === 2) {
+        if(allOpened[0].item === allOpened[1].item) {
+            allOpened.forEach(element => {
+                cardsCards[element.i].style.pointerEvents = "none";
+                cardsValues.forEach((theCard, index) => {
+                    if(theCard == element) {
+                        cardsValues.splice(index, 1);
+                    }
+                });
+                setTimeout(() => {
+                    cardsCards[element.i].style.backgroundColor = "var(--backgroung)";
+                    cardsCards[element.i].style.backgroundImage = "none";
+                }, 1000);
+            });
+        } else {
+            allOpened.forEach(element => {
+                findAndChangeOGElement(element, false);
+                setTimeout(() => {cardsCards[element.i].style.backgroundColor = "var(--main)"}, 1000);
+            });
+        }
+        cardsMoves++;
+        document.querySelector(".cards-text").textContent = "Ходів використано: " + cardsMoves;
+        if(cardsValues.length === 0) {
+            setTimeout(() => {
+                cardsWrap.style.display = "block";
+            }, 1000);
+        }
+    }
+})});
+document.querySelector(".cards-button").addEventListener("click", () => {
+    cardsGenerate();
+    cardsMoves = 0;
+    cardsWrap.style.display = "none";
+    cardsCards.forEach(card => {
+        card.style.backgroundColor = "var(--main)";
+        card.style.pointerEvents = "auto";
+    });
+})
+
 const thanks = document.querySelector(".thanks");
 document.querySelector(".footer-form").addEventListener("submit", event => {
     event.preventDefault();

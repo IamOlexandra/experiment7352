@@ -366,10 +366,6 @@
 
 .scientists {
     position: relative;
-    padding-bottom: 36px;
-}
-.scientists::after {
-    display: none;
 }
 .scientists-list {
     display: flex;
@@ -451,14 +447,15 @@
     left: calc(50% - (300px / 2));
     top: calc(50% - (100px / 2));
     background-color: var(--background);
-    width: 210px;
+    width: 280px;
     height: 100px;
-    padding: 27px 52px 26px;
+    padding: 35px 52px;
     border-radius: 20px;
     z-index: 2;
 }
 .scientists-popup-text {
     text-align: center;
+    vertical-align: middle;
 }
 .scientists-reset {
     display: none;
@@ -474,6 +471,63 @@
 }
 .scientists-reset:hover, .scientists-reset:focus {
     background-color: var(--main-hover);
+}
+
+.cards {
+    position: relative;
+    padding-bottom: 36px;
+}
+.cards::after {
+    display: none;
+}
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 59px;
+    column-gap: 59px;
+    width: 577px;
+    margin: 0 auto;
+    margin-bottom: 36px;
+}
+.cards-card {
+    width: 100px;
+    height: 140px;
+    background-color: var(--main);
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    cursor: pointer;
+}
+.cards-item {
+    height: 140px;
+}
+.cards-button {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--main);
+    box-shadow: 3px 3px 0px 0px var(--shadow);
+    padding: 10px 20px;
+    color: var(--background);
+    cursor: pointer;
+    margin: 36px auto 0 auto;
+}
+.cards-button:hover, .cards-button:focus {
+    box-shadow: 2px 2px 0px 0px var(--shadow);
+    background-color: var(--main-hover);
+}
+.cards-won {
+    width: 200px;
+    color: var(--win);
+}
+.cards-wrap {
+    display: none;
+    position: absolute;
+    left: calc(50% - (200px / 2));
+    top: 230px;
 }
 
 .footer .container {
