@@ -116,18 +116,6 @@ function restartGame() {
     dinoMsg.textContent = "";
     gameLoop();
 }
-const teamSlides = [
-    {
-        name: "Олександра",
-        info: "Дуже швидко робить завдання і допомагає.",
-        photo: "./images/minion.png"
-    },
-    {
-        name: "Назар",
-        info: "Зроблю роботу як треба, якщо треба",
-        photo: "./images/minion.png"
-    }
-];
 
 let teamIndex = 0;
 
