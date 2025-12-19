@@ -27,7 +27,7 @@ guessBtn.addEventListener('click', () => {
     }
 
     if (num === secretNumber) {
-        showGuessMessage('Повезло', 'green');
+        showGuessMessage('Ви вгадали', 'green');
     } else {
         showGuessMessage('Не вгадали', 'red');
     }
@@ -100,7 +100,7 @@ function gameLoop() {
     if (cactusX < 60 && cactusX > 25 && dinoBottom < 40) {
         isAlive = false;
         dinoMsg.style.color = "red";
-        dinoMsg.textContent = "GG ez";
+        dinoMsg.textContent = "Ви програли";
         return;
     }
 
@@ -115,4 +115,40 @@ function restartGame() {
     isAlive = true;
     dinoMsg.textContent = "";
     gameLoop();
+}
+const teamSlides = [
+    {
+        name: "Олександра",
+        info: "Дуже швидко робить завдання і допомагає.",
+        photo: "./images/с мы чт.jfif"
+    },
+    {
+        name: "Назар",
+        info: "Зроблю роботу як треба, якщо",
+        photo: "./images/с мы чт.jfif"
+    }
+];
+
+let teamIndex = 0;
+
+function teamRender() {
+    document.getElementById("team-photo").src = teamSlides[teamIndex].photo;
+    document.getElementById("team-name").textContent = teamSlides[teamIndex].name;
+    document.getElementById("team-info").textContent = teamSlides[teamIndex].info;
+}
+
+function teamNext() {
+    teamIndex++;
+    if (teamIndex >= teamSlides.length) {
+        teamIndex = 0;
+    }
+    teamRender();
+}
+
+function teamPrev() {
+    teamIndex--;
+    if (teamIndex < 0) {
+        teamIndex = teamSlides.length - 1;
+    }
+    teamRender();
 }

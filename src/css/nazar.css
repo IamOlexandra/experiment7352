@@ -175,3 +175,54 @@ h2 {
     font-size: 20px;
     font-weight: bold;
 }
+/* ===== TEAM styles ===== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.team-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.team-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.team-arrow {
+    font-size: 40px;
+    cursor: pointer;
+    padding: 20px;
+    user-select: none;
+}
+
+.team-card {
+    width: 300px;
+    text-align: center;
+}
+
+.team-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    background: #e0e0e0;
+}
+
+.team-card h3 {
+    margin: 15px 0 8px;
+    font-size: 18px;
+}
+
+.team-card p {
+    font-size: 14px;
+    color: #555;
+}
