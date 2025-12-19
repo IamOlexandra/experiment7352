@@ -1,7 +1,3 @@
-.thanks {
-    display: none;
-}
-
 .header .container {
     max-width: 1130px;
     display: flex;
@@ -100,7 +96,7 @@
     text-align: center;
 }
 
-.popup {
+.popup, .scientists-popup, .thanks {
     top: 0;
     left: 0;
     position: fixed;
@@ -114,10 +110,10 @@
     position: fixed;
     left: calc(50% - (576px / 2));
     top: calc(50% - (316px / 2));
-    background-color: white;
+    background-color: var(--background);
     width: 576px;
     height: 316px;
-    padding: 46px 92px 47px 92px;
+    padding: 46px 92px 47px;
     border-radius: 20px;
     background-image: url(../images/sword.svg),  url(../images/puzzle.svg),  url(../images/game-development.svg),  url(../images/tic-tac-toe.svg);
     background-repeat: no-repeat;
@@ -170,7 +166,7 @@
     box-shadow: 2px 2px 0px 0px var(--shadow);
     background-color: var(--main-hover);
 }
-.popup-close {
+.popup-close, .scientists-popup-close, .thanks-close {
     position: absolute;
     right: 30px;
     top: 30px;
@@ -183,7 +179,7 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-.popup-close:hover, .popup-close:focus {
+.popup-close:hover, .popup-close:focus, .scientists-popup-close:hover, .scientists-popup-close:focus, .thanks-close:hover, .thanks-close:focus {
     background-image: url(../images/close-icon-hover.svg);
 }
 
@@ -324,7 +320,8 @@
 
 .football-field {
     position: relative;
-    width: 720px;
+    width: 100%;
+    max-width: 720px;
     height: 220px;
     background-color: var(--football-field);
     border: solid var(--main) 2px;
@@ -341,6 +338,35 @@
     background-position: center;
 }
 
+.threenumbers-list {
+    display: flex;
+    width: 481px;
+    justify-content: space-between;
+    margin: 0 auto 36px auto;
+}
+.threenumbers-input {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--input);
+    padding: 10px;
+    width: 135px;
+    box-shadow: 3px 3px 0px 0px var(--shadow);
+    text-align: center;
+}
+.threenumbers-input:hover, .threenumbers-input:focus {
+    background-color: var(--input-hover);
+    box-shadow: 2px 2px 0px 0px var(--shadow);
+}
+.threenumbers-input::placeholder {
+    color: var(--placeholder);
+}
+.threenumbers-text {
+    height: 15px;
+}
+
+.scientists {
+    position: relative;
+}
 .scientists-list {
     display: flex;
     flex-wrap: wrap;
@@ -361,4 +387,224 @@
 }
 .scientists-name, .scientists-years {
     font-size: 8px;
+}
+.scientists-wrap {
+    display: flex;
+    margin-bottom: 20px;
+}
+.scientists-buttons {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 20px;
+    height: 270px;
+    margin: 0 auto;
+    height: fit-content;
+}
+.scientists-wrap .scientists-buttons:first-child {
+    align-items: flex-end;
+    width: 450px;
+    margin-right: 18px;
+}
+.scientists-wrap .scientists-buttons:nth-child(2) {
+    align-items: flex-start;
+    width: 450px;
+    margin-left: 18px;
+}
+.scientists-last {
+    align-items: center;
+}
+.scientists-button {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--main);
+    box-shadow: 3px 3px 0px 0px var(--shadow);
+    padding: 10px 20px;
+    color: var(--background);
+    cursor: pointer;
+    text-align: left;
+}
+.scientists-button:last-child {
+    align-self: center;
+}
+.scientists-button:hover, .scientists-button:focus {
+    box-shadow: 2px 2px 0px 0px var(--shadow);
+    background-color: var(--main-hover);
+}
+.scientists-popup {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--shadow);
+    display: none;
+    z-index: 1;
+}
+.scientists-popup-block {
+    position: fixed;
+    left: calc(50% - (300px / 2));
+    top: calc(50% - (100px / 2));
+    background-color: var(--background);
+    width: 280px;
+    height: 100px;
+    padding: 35px 52px;
+    border-radius: 20px;
+    z-index: 2;
+}
+.scientists-popup-text {
+    text-align: center;
+    vertical-align: middle;
+}
+.scientists-reset {
+    display: none;
+    position: absolute;
+    top: 91px;
+    right: 50px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--main);
+    padding: 10px 20px;
+    color: var(--background);
+    cursor: pointer;
+}
+.scientists-reset:hover, .scientists-reset:focus {
+    background-color: var(--main-hover);
+}
+
+.cards {
+    position: relative;
+    padding-bottom: 36px;
+}
+.cards::after {
+    display: none;
+}
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 59px;
+    column-gap: 59px;
+    width: 577px;
+    margin: 0 auto;
+    margin-bottom: 36px;
+}
+.cards-card {
+    width: 100px;
+    height: 140px;
+    background-color: var(--main);
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    cursor: pointer;
+}
+.cards-item {
+    height: 140px;
+}
+.cards-button {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--main);
+    box-shadow: 3px 3px 0px 0px var(--shadow);
+    padding: 10px 20px;
+    color: var(--background);
+    cursor: pointer;
+    margin: 36px auto 0 auto;
+}
+.cards-button:hover, .cards-button:focus {
+    box-shadow: 2px 2px 0px 0px var(--shadow);
+    background-color: var(--main-hover);
+}
+.cards-won {
+    width: 200px;
+    color: var(--win);
+}
+.cards-wrap {
+    display: none;
+    position: absolute;
+    left: calc(50% - (200px / 2));
+    top: 230px;
+}
+
+.footer .container {
+    max-width: 1131px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer {
+    background-color: var(--background);
+    padding-top: 61px;
+    padding-bottom: 59px;
+}
+.footer-text {
+    line-height: 170%;
+    text-align: left;
+}
+.footer-link:hover, .footer-link:focus {
+    color: var(--main-hover);
+}
+.footer-form {
+    display: flex;
+    margin-bottom: 18px;
+}
+.footer-input {
+    display: block;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--input);
+    padding: 10px;
+    margin-right: 36px;
+}
+.footer-input:hover, .footer-input:focus {
+    background-color: var(--input-hover);
+}
+.footer-input::placeholder {
+    color: var(--placeholder);
+}
+.footer-button {
+    display: block;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--main);
+    padding: 10px;
+    color: var(--background);
+    cursor: pointer;
+}
+.footer-button:hover, .footer-button:focus {
+    background-color: var(--main-hover);
+}
+.footer-minitext {
+    font-size: 6px;
+    text-align: left;
+}
+
+.thanks {
+    display: none;
+}
+.thanks-popup {
+    position: fixed;
+    left: calc(50% - (463px / 2));
+    top: calc(50% - (245px / 2));
+    background-color: var(--background);
+    width: 463px;
+    height: 245px;
+    padding-top: 83px;
+    border-radius: 20px;
+    background-image: url(../images/sword.svg),  url(../images/puzzle.svg),  url(../images/game-development.svg),  url(../images/tic-tac-toe.svg);
+    background-repeat: no-repeat;
+    background-position-x: 43px,  87px,  347px,  391px;
+    background-position-y: 69px,  145px,  145px,  69px;
+    z-index: 2;
+}
+.thanks::after {
+    display: none;
+}
+.thanks-text {
+    text-align: center;
+    font-size: 20px;
 }

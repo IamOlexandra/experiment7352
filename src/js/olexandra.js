@@ -107,7 +107,6 @@ document.getElementById("calculator-equals").addEventListener("click", () => {
     } else {
         calculatorResult.textContent = "Помилка!";
     }
-    console.log(calculatorResult.textContent);
     if(calculatorResult.textContent.length > 15) {
         calculatorResult.textContent = "Число задовге";
     }
@@ -140,6 +139,27 @@ footballField.addEventListener("click", event => {
     footballBall.style.top = y + "px";
 });
 
+const threeNumbersInputs = document.querySelectorAll(".threenumbers-input"),
+    threeNumbersResult = document.querySelector(".threenumbers-text");
+threeNumbersInputs.forEach(input => input.addEventListener("change", () => {
+    let biggestNumber = null,
+        isWrong = false;
+    for(let anInput of threeNumbersInputs) {
+        const inputValue = Number(anInput.value.trim());
+        if(!isNaN(inputValue)) {
+            if(biggestNumber !== null) {
+                inputValue > biggestNumber ? biggestNumber = inputValue : biggestNumber;
+            } else {
+                biggestNumber = inputValue;
+            }
+        } else {
+            isWrong = true;
+        }
+    }
+    threeNumbersResult.textContent = !isWrong ? `Найбільше число, яке ви ввели - ${biggestNumber}` : "Одне число, яке ви ввели - неправильне";
+    threeNumbersResult.style.color = !isWrong ? "var(--main)" : "var(--loss)";
+}));
+
 const allScientists = [
     {firstName: "Albert", lastName: "Einstein", birth: 1879, death: 1955},
     {firstName: "Isaac", lastName: "Newton", birth: 1643, death: 1727},
@@ -155,7 +175,9 @@ const allScientists = [
     {firstName: "Michael", lastName: "Faraday", birth: 1791, death: 1867},
 ],
     scientistsList = document.querySelector(".scientists-list"),
-    scientistsButtons = document.querySelectorAll(".scientists-button");
+    scientistsButtons = document.querySelectorAll(".scientists-button"),
+    scientistReset = document.querySelector(".scientists-reset");
+let someScientists = structuredClone(allScientists);
 function buildScientists(scientists) {
     let html = "";
     scientists.forEach(scientist => {
@@ -163,4 +185,159 @@ function buildScientists(scientists) {
     });
     scientistsList.innerHTML = html;
 }
-buildScientists(allScientists);
+function makeResetVisible() {
+    scientistReset.style.display = "block";
+}
+buildScientists(someScientists);
+scientistsButtons[0].addEventListener("click", () => {
+    someScientists = someScientists.filter(scientist => scientist.birth > 1800 && scientist.birth <= 1900);
+    buildScientists(someScientists);
+    makeResetVisible();
+});
+scientistsButtons[1].addEventListener("click", () => {
+    someScientists.sort((a, b) => `${a.firstName} ${a.lastName}`.localeCompare(`${b.firstName} ${b.lastName}`));
+    buildScientists(someScientists);
+    makeResetVisible();
+});
+scientistsButtons[2].addEventListener("click", () => {
+    someScientists = someScientists.sort((a, b) => (b.death - b.birth) - (a.death - a.birth));
+    buildScientists(someScientists);
+    makeResetVisible();
+});
+scientistsButtons[3].addEventListener("click", () => {
+    let latestBornScientist = {firstName: null, lastName: null, birth: 0, death: null};
+    for(let scientist of someScientists) {
+        if(scientist.birth > latestBornScientist.birth) {
+            latestBornScientist = scientist;
+        }
+    }
+    someScientists = [];
+    someScientists.push(latestBornScientist);
+    buildScientists(someScientists);
+    makeResetVisible();
+});
+scientistsButtons[4].addEventListener("click", () => {
+    const albert = allScientists.find(scientist => scientist.firstName === "Albert" && scientist.lastName === "Einstein");
+    document.querySelector(".scientists-popup-text").textContent = `Рік народження ${albert.firstName} ${albert.lastName} - ${albert.birth}.`;
+    document.querySelector(".scientists-popup").style.display = "block";
+});
+scientistsButtons[5].addEventListener("click", () => {
+    someScientists = someScientists.filter(scientist => scientist.lastName[0] === "C");
+    buildScientists(someScientists);
+    makeResetVisible();
+});
+scientistsButtons[6].addEventListener("click", () => {
+    someScientists = someScientists.filter(scientist => scientist.firstName[0] !== "A");
+    buildScientists(someScientists);
+    makeResetVisible();
+});
+scientistsButtons[7].addEventListener("click", () => {
+    let mostLivedScientist = {firstName: null, lastName: null, birth: 0, death: 0};
+    for(let scientist of someScientists) {
+        if(scientist.death - scientist.birth > mostLivedScientist.death - mostLivedScientist.birth) {
+            mostLivedScientist = scientist;
+        }
+    }
+    let leastLeavedScientist = {firstName: null, lastName: null, birth: 0, death: 1000};
+    for(let scientist of someScientists) {
+        if(scientist.death - scientist.birth < leastLeavedScientist.death - leastLeavedScientist.birth) {
+            leastLeavedScientist = scientist;
+        }
+    }
+    someScientists = [];
+    someScientists.push(mostLivedScientist);
+    someScientists.push(leastLeavedScientist);
+    buildScientists(someScientists);
+    makeResetVisible();
+});
+scientistsButtons[8].addEventListener("click", () => {
+    someScientists = someScientists.filter(scientist => scientist.firstName[0] === scientist.lastName[0]);
+    buildScientists(someScientists);
+    makeResetVisible();
+
+});
+scientistReset.addEventListener("click", () => {
+    someScientists = structuredClone(allScientists);
+    buildScientists(someScientists);
+    scientistReset.style.display = "none";
+});
+document.querySelector(".scientists-popup-close").addEventListener("click", () => {
+    document.querySelector(".scientists-popup").style.display = "none";
+});
+
+const cardsImages = {sword: "https://i.ibb.co/B5h1p0GP/sword.png", puzzle: "https://i.ibb.co/rKQdDQHd/puzzle.png", gameDevelopment: "https://i.ibb.co/5gxX0GbS/game-development.png", ticTacToe: "https://i.ibb.co/HTm94qz2/tic-tac-toe.png",},
+    cardsCards = document.querySelectorAll(".cards-card"),
+    cardsNames = ["sword", "puzzle", "gameDevelopment", "ticTacToe", "sword", "puzzle", "gameDevelopment", "ticTacToe",],
+    cardsValues = [],
+    cardsWrap = document.querySelector(".cards-wrap");
+let cardsMoves = 0;
+function cardsGenerate() {
+    const localNames = structuredClone(cardsNames);
+    for(let index = 0; index < cardsNames.length; index++) {
+        const randomNumber = Math.floor(Math.random() * localNames.length);
+        cardsValues.push({i: index, item: localNames[randomNumber], isOpened: false});
+        localNames.splice(randomNumber, 1);
+    }
+}
+function findAndChangeOGElement(card, truth) {
+    cardsValues.forEach(element => {
+        if(element == card) {
+            element.isOpened = truth;
+        }
+    });
+}
+cardsGenerate();
+cardsCards.forEach((card, index) => {card.addEventListener("click", () => {
+    card.style.backgroundColor = "var(--scientist)";
+    let theCard = cardsValues.find(element => element.i === index);
+    card.style.backgroundImage = `url(${cardsImages[theCard.item]})`;
+    findAndChangeOGElement(theCard, true);
+    const allOpened = cardsValues.filter(element => element.isOpened === true);
+    if(allOpened.length === 2) {
+        if(allOpened[0].item === allOpened[1].item) {
+            allOpened.forEach(element => {
+                cardsCards[element.i].style.pointerEvents = "none";
+                cardsValues.forEach((theCard, index) => {
+                    if(theCard == element) {
+                        cardsValues.splice(index, 1);
+                    }
+                });
+                setTimeout(() => {
+                    cardsCards[element.i].style.backgroundColor = "var(--backgroung)";
+                    cardsCards[element.i].style.backgroundImage = "none";
+                }, 1000);
+            });
+        } else {
+            allOpened.forEach(element => {
+                findAndChangeOGElement(element, false);
+                setTimeout(() => {cardsCards[element.i].style.backgroundColor = "var(--main)"}, 1000);
+            });
+        }
+        cardsMoves++;
+        document.querySelector(".cards-text").textContent = "Ходів використано: " + cardsMoves;
+        if(cardsValues.length === 0) {
+            setTimeout(() => {
+                cardsWrap.style.display = "block";
+            }, 1000);
+        }
+    }
+})});
+document.querySelector(".cards-button").addEventListener("click", () => {
+    cardsGenerate();
+    cardsMoves = 0;
+    cardsWrap.style.display = "none";
+    cardsCards.forEach(card => {
+        card.style.backgroundColor = "var(--main)";
+        card.style.pointerEvents = "auto";
+    });
+})
+
+const thanks = document.querySelector(".thanks");
+document.querySelector(".footer-form").addEventListener("submit", event => {
+    event.preventDefault();
+    thanks.style.display = "block";
+    document.querySelector(".footer-input").value = "";
+});
+document.querySelector(".thanks-close").addEventListener("click", () => {
+    thanks.style.display = "none";
+});
