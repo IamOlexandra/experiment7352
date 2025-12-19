@@ -24,6 +24,8 @@
     text-decoration: none;
     color: var(--main);
     box-sizing: border-box;
+}
+p {    
     text-align: center;
 }
 *:focus {
