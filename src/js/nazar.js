@@ -120,12 +120,12 @@ const teamSlides = [
     {
         name: "Олександра",
         info: "Дуже швидко робить завдання і допомагає.",
-        photo: "./images/с мы чт.jfif"
+        photo: "./images/minion.jfif"
     },
     {
         name: "Назар",
         info: "Зроблю роботу як треба, якщо",
-        photo: "./images/с мы чт.jfif"
+        photo: "./images/minion.jfif"
     }
 ];
 
