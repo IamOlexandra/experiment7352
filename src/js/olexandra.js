@@ -145,6 +145,9 @@ threeNumbersInputs.forEach(input => input.addEventListener("change", () => {
     let biggestNumber = null,
         isWrong = false;
     for(let anInput of threeNumbersInputs) {
+        if(anInput.value === "") {
+            continue;
+        }
         const inputValue = Number(anInput.value.trim());
         if(!isNaN(inputValue)) {
             if(biggestNumber !== null) {
@@ -156,8 +159,12 @@ threeNumbersInputs.forEach(input => input.addEventListener("change", () => {
             isWrong = true;
         }
     }
-    threeNumbersResult.textContent = !isWrong ? `Найбільше число, яке ви ввели - ${biggestNumber}` : "Одне число, яке ви ввели - неправильне";
-    threeNumbersResult.style.color = !isWrong ? "var(--main)" : "var(--loss)";
+    if(biggestNumber === null && !isWrong) {
+        threeNumbersResult.textContent = "";
+    } else {
+        threeNumbersResult.textContent = !isWrong ? `Найбільше число, яке ви ввели — ${biggestNumber}` : "Одне число, яке ви ввели — неправильне";
+        threeNumbersResult.style.color = !isWrong ? "var(--main)" : "var(--loss)";
+    }
 }));
 
 const allScientists = [
@@ -205,6 +212,9 @@ scientistsButtons[2].addEventListener("click", () => {
     makeResetVisible();
 });
 scientistsButtons[3].addEventListener("click", () => {
+    if(someScientists.length === 0) {
+        return;
+    }
     let latestBornScientist = {firstName: null, lastName: null, birth: 0, death: null};
     for(let scientist of someScientists) {
         if(scientist.birth > latestBornScientist.birth) {
@@ -232,6 +242,9 @@ scientistsButtons[6].addEventListener("click", () => {
     makeResetVisible();
 });
 scientistsButtons[7].addEventListener("click", () => {
+    if(someScientists.length === 0) {
+        return;
+    }
     let mostLivedScientist = {firstName: null, lastName: null, birth: 0, death: 0};
     for(let scientist of someScientists) {
         if(scientist.death - scientist.birth > mostLivedScientist.death - mostLivedScientist.birth) {
@@ -292,6 +305,7 @@ cardsCards.forEach((card, index) => {card.addEventListener("click", () => {
     let theCard = cardsValues.find(element => element.i === index);
     card.style.backgroundImage = `url(${cardsImages[theCard.item]})`;
     findAndChangeOGElement(theCard, true);
+    cardsCards[theCard.i].style.pointerEvents = "none";
     const allOpened = cardsValues.filter(element => element.isOpened === true);
     if(allOpened.length === 2) {
         if(allOpened[0].item === allOpened[1].item) {
@@ -302,15 +316,30 @@ cardsCards.forEach((card, index) => {card.addEventListener("click", () => {
                         cardsValues.splice(index, 1);
                     }
                 });
+                cardsCards.forEach(element => element.style.pointerEvents = "none");
                 setTimeout(() => {
-                    cardsCards[element.i].style.backgroundColor = "var(--backgroung)";
                     cardsCards[element.i].style.backgroundImage = "none";
+                    cardsCards[element.i].style.backgroundColor = "transparent";
+                    cardsCards.forEach(element => {
+                        if(element.style.backgroundColor !== "transparent") {
+                            element.style.pointerEvents = "auto";
+                        }
+                    });
+                    cardsCards[element.i].style.pointerEvents = "none";
                 }, 1000);
             });
         } else {
+            cardsCards.forEach(element => element.style.pointerEvents = "none");
             allOpened.forEach(element => {
                 findAndChangeOGElement(element, false);
-                setTimeout(() => {cardsCards[element.i].style.backgroundColor = "var(--main)"}, 1000);
+                setTimeout(() => {
+                    cardsCards[element.i].style.backgroundColor = "var(--main)";
+                    cardsCards.forEach(element => {
+                        if(element.style.backgroundColor !== "transparent") {
+                            element.style.pointerEvents = "auto";
+                        }
+                    });
+                }, 1000);
             });
         }
         cardsMoves++;

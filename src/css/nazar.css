@@ -1,10 +1,10 @@
 
-body {
+/* body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 40px;
     color: #222;
-}
+} */
 h2 {
     margin-bottom: 12px;
 }
@@ -176,12 +176,12 @@ h2 {
     font-weight: bold;
 }
 
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: #fff;
-}
+} */
 
 .team-title {
     text-align: center;
