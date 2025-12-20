@@ -183,11 +183,13 @@ h2 {
     background: #fff;
 } */
 
+.team {
+    position: relative;
+}
+
 .team-title {
     text-align: center;
-    margin-top: 40px;
     font-size: 22px;
-    font-weight: 600;
 }
 
 .team-slider {
@@ -198,10 +200,19 @@ h2 {
 }
 
 .team-arrow {
+    position: absolute;
+    top: 200px;
     font-size: 40px;
     cursor: pointer;
-    padding: 20px;
     user-select: none;
+}
+
+.team-left {
+    left: 60px;
+}
+
+.team-right {
+    right: 60px;
 }
 
 .team-card {
@@ -226,6 +237,6 @@ h2 {
     font-size: 14px;
     color: #555;
 }
-.team-card{
+.team-hidden{
     display: none;
 }

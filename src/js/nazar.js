@@ -117,26 +117,28 @@ function restartGame() {
     gameLoop();
 }
 
-let teamIndex = 0;
+const allTeamCards = document.querySelectorAll(".team-card"),
+teamCardsParent = document.querySelector(".team-slider");
 
-function teamRender() {
-    document.getElementById("team-photo").src = childElementCount[teamIndex].photo;
-    document.getElementById("team-name").textContent = childElementCount[teamIndex].name;
-    document.getElementById("team-info").textContent = childElementCount[teamIndex].info;
-}
+let teamIndex = 0;
 
 function teamNext() {
     teamIndex++;
-    if (teamIndex >= childElementCount.length) {
+    if (teamIndex === teamCardsParent.childElementCount) {
         teamIndex = 0;
     }
-    teamRender();
+    allTeamCards.forEach(element => element.classList.add("team-hidden"));
+    allTeamCards[teamIndex].classList.remove("team-hidden");
 }
 
 function teamPrev() {
     teamIndex--;
     if (teamIndex < 0) {
-        teamIndex = childElementCount.length - 1;
+        teamIndex = teamCardsParent.childElementCount - 1;
     }
-    teamRender();
+    allTeamCards.forEach(element => element.classList.add("team-hidden"));
+    allTeamCards[teamIndex].classList.remove("team-hidden");
 }
+
+document.querySelector(".team-left").addEventListener("click", teamPrev);
+document.querySelector(".team-right").addEventListener("click", teamNext);
