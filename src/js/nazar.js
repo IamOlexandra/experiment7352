@@ -120,14 +120,14 @@ function restartGame() {
 let teamIndex = 0;
 
 function teamRender() {
-    document.getElementById("team-photo").src = teamSlides[teamIndex].photo;
-    document.getElementById("team-name").textContent = teamSlides[teamIndex].name;
-    document.getElementById("team-info").textContent = teamSlides[teamIndex].info;
+    document.getElementById("team-photo").src = childElementCount[teamIndex].photo;
+    document.getElementById("team-name").textContent = childElementCount[teamIndex].name;
+    document.getElementById("team-info").textContent = childElementCount[teamIndex].info;
 }
 
 function teamNext() {
     teamIndex++;
-    if (teamIndex >= teamSlides.length) {
+    if (teamIndex >= childElementCount.length) {
         teamIndex = 0;
     }
     teamRender();
@@ -136,7 +136,7 @@ function teamNext() {
 function teamPrev() {
     teamIndex--;
     if (teamIndex < 0) {
-        teamIndex = teamSlides.length - 1;
+        teamIndex = childElementCount.length - 1;
     }
     teamRender();
 }
