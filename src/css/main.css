@@ -25,7 +25,7 @@
     color: var(--main);
     box-sizing: border-box;
 }
-p {    
+p, h2, div {    
     text-align: center;
 }
 *:focus {
